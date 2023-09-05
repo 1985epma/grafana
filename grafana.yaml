@@ -13,6 +13,8 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+name: grafana-deployment
+namespace: monitoring
   labels:
     app: grafana
   name: grafana
@@ -70,7 +72,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: grafana
+  name: grafana-service
+  namespace: monitoring
 spec:
   ports:
     - port: 3000
